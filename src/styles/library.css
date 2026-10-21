@@ -1,0 +1,2052 @@
+/* ==========================================================================
+   Smita'S SUNFLOWER LIBRARY STYLES
+   A warm, golden, literary sanctuary filled with blooms, books & magic
+   ========================================================================== */
+
+:root {
+  --sf-gold: #ffb703;
+  --sf-amber: #fb8500;
+  --sf-deep-gold: #e09f00;
+  --sf-light: #fff9e6;
+  --sf-cream: #fdfaf3;
+  --sf-dark: #2d2118;
+  --sf-brown: #5c3d2e;
+  --sf-leaf: #4f772d;
+  --sf-leaf-light: #90a955;
+  --sf-shadow: rgba(45, 33, 24, 0.12);
+  --sf-glow: rgba(255, 183, 3, 0.4);
+}
+
+.library-root {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 10% 20%, #fffbf0 0%, #fff5d6 50%, #fae8b8 100%);
+  color: var(--sf-dark);
+  font-family: var(--font-main);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+
+/* =========================================
+   FLOATING SUNFLOWER PETALS BACKGROUND
+   ========================================= */
+.sunflower-petals-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.falling-petal {
+  position: absolute;
+  top: -40px;
+  background: linear-gradient(135deg, #ffd166 0%, #ffb703 60%, #fb8500 100%);
+  border-radius: 80% 0 80% 0;
+  box-shadow: 0 4px 10px rgba(251, 133, 0, 0.25);
+  opacity: 0.8;
+  animation: fallDown linear infinite, petalDrift ease-in-out infinite alternate;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.85;
+  }
+
+  90% {
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalDrift {
+  0% {
+    margin-left: 0px;
+  }
+
+  100% {
+    margin-left: 50px;
+  }
+}
+
+/* =========================================
+   TOP NAV / ANNOUNCEMENT BAR
+   ========================================= */
+.library-topbar {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 183, 3, 0.3);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.topbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--sf-dark);
+}
+
+.brand-sunflower-icon {
+  font-size: 28px;
+  display: inline-block;
+  animation: rotateGently 12s linear infinite;
+  filter: drop-shadow(0 2px 6px rgba(255, 183, 3, 0.5));
+}
+
+.brand-text h1 {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--sf-dark);
+  line-height: 1.1;
+}
+
+.brand-text span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--sf-brown);
+  font-weight: 800;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topbar-btn {
+  background: white;
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  color: var(--sf-dark);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.topbar-btn:hover {
+  transform: translateY(-2px);
+  background: var(--sf-light);
+  border-color: var(--sf-gold);
+  box-shadow: 0 4px 12px var(--sf-glow);
+}
+
+.topbar-btn.primary {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.35);
+}
+
+.topbar-btn.primary:hover {
+  box-shadow: 0 6px 18px rgba(251, 133, 0, 0.5);
+}
+
+/* =========================================
+   HERO / GARDEN ARCHWAY SECTION
+   ========================================= */
+.library-hero {
+  max-width: 1200px;
+  margin: 30px auto 20px;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-wreath-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.wreath-line {
+  height: 2px;
+  width: 70px;
+  background: linear-gradient(to right, transparent, var(--sf-gold), transparent);
+}
+
+.hero-sunflower-crown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 26px;
+}
+
+.sunflower-spin {
+  display: inline-block;
+  animation: rotateGently 16s linear infinite;
+}
+
+.library-hero h2 {
+  font-family: var(--font-title);
+  font-size: clamp(36px, 6vw, 62px);
+  color: var(--sf-dark);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(255, 183, 3, 0.15);
+}
+
+.library-hero h2 .highlight-name {
+  background: linear-gradient(135deg, #d48b00, #b25000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.library-hero .hero-quote {
+  font-family: var(--font-story);
+  font-size: clamp(20px, 3.5vw, 25px);
+  color: var(--sf-brown);
+  max-width: 720px;
+  margin: 0 auto 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Hero Stats Bar */
+.hero-stats-shelf {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.shelf-stat-badge {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  padding: 10px 22px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease;
+}
+
+.shelf-stat-badge:hover {
+  transform: translateY(-3px);
+  border-color: var(--sf-gold);
+}
+
+.stat-icon {
+  font-size: 24px;
+}
+
+.stat-info {
+  text-align: left;
+}
+
+.stat-num {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sf-dark);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #777;
+  font-weight: 700;
+}
+
+/* =========================================
+   INTERACTIVE SUNFLOWER FEATURE TABS / SHORTCUTS
+   ========================================= */
+.feature-jump-bar {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.feature-jump-pill {
+  background: white;
+  border: 1.5px solid rgba(255, 183, 3, 0.3);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sf-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.feature-jump-pill:hover,
+.feature-jump-pill.active {
+  background: linear-gradient(135deg, #fff3b0, #ffe680);
+  border-color: var(--sf-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(255, 183, 3, 0.3);
+}
+
+/* =========================================
+   SUNFLOWER MOOD ORACLE CARD (RECOMMENDATION)
+   ========================================= */
+.sunflower-oracle-section {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.oracle-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 225, 0.96));
+  border: 2px dashed var(--sf-gold);
+  border-radius: 28px;
+  padding: 32px 28px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 14px 40px rgba(251, 133, 0, 0.12);
+  overflow: hidden;
+}
+
+.oracle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: var(--sf-amber);
+  background: #fff0d4;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.oracle-card h3 {
+  font-family: var(--font-title);
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--sf-dark);
+  margin-bottom: 8px;
+}
+
+.oracle-desc {
+  font-size: 15px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 22px;
+}
+
+.mood-buttons-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.mood-btn {
+  background: white;
+  border: 1.5px solid rgba(255, 183, 3, 0.35);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--sf-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mood-btn:hover {
+  background: #fff8e1;
+  border-color: var(--sf-gold);
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(255, 183, 3, 0.35);
+}
+
+.mood-btn.active {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border-color: var(--sf-amber);
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(251, 133, 0, 0.4);
+}
+
+.oracle-result-box {
+  background: white;
+  border-radius: 20px;
+  padding: 22px;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  animation: popIn 0.35s ease;
+}
+
+.result-sunflower-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sf-amber);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.oracle-book-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  margin-top: 14px;
+}
+
+.oracle-book-spine {
+  width: 90px;
+  height: 125px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: white;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.oracle-book-spine span {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.oracle-book-spine strong {
+  font-family: var(--font-title);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.oracle-book-details h4 {
+  font-family: var(--font-title);
+  font-size: 22px;
+  color: var(--sf-dark);
+  margin-bottom: 4px;
+}
+
+.oracle-book-author {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sf-brown);
+  margin-bottom: 8px;
+}
+
+.oracle-book-blurb {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.oracle-action-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   SEARCH & CATEGORY FILTER SECTION
+   ========================================= */
+.library-filter-panel {
+  max-width: 1200px;
+  margin: 36px auto 24px;
+  padding: 0 20px;
+}
+
+.filter-glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.filter-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrap {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+
+.search-icon-decor {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.library-search-input {
+  width: 100%;
+  background: var(--sf-light);
+  border: 1.5px solid rgba(255, 183, 3, 0.3);
+  border-radius: 999px;
+  padding: 12px 20px 12px 48px;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sf-dark);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.library-search-input:focus {
+  background: white;
+  border-color: var(--sf-gold);
+  box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.25);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #eee;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Category Pills */
+.category-tabs-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cat-tab-btn {
+  background: white;
+  border: 1.5px solid rgba(255, 183, 3, 0.3);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--sf-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.cat-tab-btn:hover {
+  background: var(--sf-light);
+  border-color: var(--sf-gold);
+  transform: translateY(-2px);
+}
+
+.cat-tab-btn.active {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.35);
+}
+
+.cat-tab-count {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.cat-tab-btn.active .cat-tab-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+
+/* Secondary Genre Chips */
+.genre-chips-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.genre-chip {
+  background: var(--sf-light);
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  color: var(--sf-brown);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.genre-chip:hover,
+.genre-chip.active {
+  background: var(--sf-gold);
+  color: white;
+  border-color: var(--sf-gold);
+}
+
+/* =========================================
+   BOOKSHELF / BOOK CARDS GRID
+   ========================================= */
+.library-bookshelf-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.shelf-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.shelf-title {
+  font-family: var(--font-title);
+  font-size: 26px;
+  color: var(--sf-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shelf-counter {
+  font-size: 13px;
+  font-weight: 700;
+  color: #777;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+/* Single Book Card with 3D Aesthetics */
+.book-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 183, 3, 0.25);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(251, 133, 0, 0.18);
+  border-color: var(--sf-gold);
+}
+
+/* Visual Book Cover Top */
+.book-cover-stage {
+  height: 220px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-spine-effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), transparent 70%);
+  z-index: 2;
+}
+
+.book-bookmark-ribbon {
+  position: absolute;
+  right: 20px;
+  top: -4px;
+  background: var(--sf-amber);
+  color: white;
+  width: 22px;
+  height: 38px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.book-top-badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.category-badge-chip {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bookmark-toggle-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.bookmark-toggle-btn:hover {
+  transform: scale(1.15);
+  background: white;
+}
+
+.bookmark-toggle-btn.saved {
+  background: var(--sf-gold);
+  color: white;
+}
+
+.book-cover-center {
+  text-align: center;
+  z-index: 2;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.book-sunflower-emblem {
+  font-size: 32px;
+  margin-bottom: 6px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.book-cover-title {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.book-cover-author {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.book-genre-pill {
+  z-index: 2;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  align-self: flex-start;
+  font-weight: 700;
+}
+
+/* Card Content Bottom */
+.book-card-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.book-quote-preview {
+  font-family: var(--font-story);
+  font-size: 16px;
+  color: var(--sf-brown);
+  line-height: 1.35;
+  margin-bottom: 12px;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.book-dedication-note {
+  background: var(--sf-light);
+  border-left: 3px solid var(--sf-gold);
+  padding: 8px 10px;
+  border-radius: 0 8px 8px 0;
+  font-size: 12px;
+  color: var(--sf-dark);
+  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.book-dedication-note strong {
+  color: var(--sf-amber);
+}
+
+.book-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.read-peek-btn {
+  flex: 1;
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(251, 133, 0, 0.25);
+}
+
+.read-peek-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(251, 133, 0, 0.4);
+}
+
+/* Empty search state */
+.empty-bookshelf {
+  grid-column: 1 / -1;
+  background: white;
+  border-radius: 24px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed var(--sf-gold);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.empty-bookshelf h3 {
+  font-family: var(--font-title);
+  font-size: 26px;
+  color: var(--sf-dark);
+  margin-bottom: 6px;
+}
+
+.empty-bookshelf p {
+  color: #777;
+  font-size: 15px;
+}
+
+/* =========================================
+   INTERACTIVE SUNFLOWER GARDEN SECTION
+   (Plant a Sunflower with a Wish)
+   ========================================= */
+.sunflower-garden-section {
+  max-width: 1200px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+}
+
+.garden-wrapper-card {
+  background: linear-gradient(180deg, #fff9e6 0%, #fdf4d0 40%, #e8d09b 100%);
+  border: 2px solid rgba(255, 183, 3, 0.4);
+  border-radius: 32px;
+  padding: 36px 28px 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.garden-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.garden-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--sf-gold);
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-family: var(--font-title);
+  font-size: 15px;
+  color: var(--sf-amber);
+  margin-bottom: 10px;
+}
+
+.garden-header h3 {
+  font-family: var(--font-title);
+  font-size: clamp(30px, 4.5vw, 44px);
+  color: var(--sf-dark);
+  margin-bottom: 6px;
+}
+
+.garden-header p {
+  font-size: 15px;
+  color: var(--sf-brown);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* The Soil & Growing Sunflowers Area */
+.garden-bed {
+  background: linear-gradient(to bottom, #9a6d38 0%, #5c3d1e 100%);
+  border-radius: 20px;
+  padding: 40px 20px 20px;
+  margin-bottom: 24px;
+  min-height: 240px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.garden-soil-grass {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+/* Individual Sunflower In Soil */
+.planted-sunflower-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  position: relative;
+}
+
+.planted-sunflower-item:hover {
+  transform: scale(1.15) translateY(-6px);
+}
+
+.sunflower-flower-head {
+  font-size: 44px;
+  filter: drop-shadow(0 4px 10px rgba(255, 183, 3, 0.6));
+  animation: swaySunflower 3s ease-in-out infinite alternate;
+}
+
+.sunflower-stem {
+  width: 6px;
+  height: 48px;
+  background: linear-gradient(to bottom, #70a038, #4f772d);
+  border-radius: 3px;
+  position: relative;
+  margin-top: -4px;
+}
+
+.sunflower-stem-leaf {
+  position: absolute;
+  top: 14px;
+  left: 5px;
+  width: 14px;
+  height: 8px;
+  background: #70a038;
+  border-radius: 0 100% 0 100%;
+}
+
+.sunflower-stem-leaf.right {
+  left: auto;
+  right: 5px;
+  border-radius: 100% 0 100% 0;
+}
+
+.sunflower-planter-tag {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--sf-dark);
+  font-family: var(--font-title);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Plant a Sunflower Form Toggle */
+.plant-sunflower-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 183, 3, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.plant-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.plant-input {
+  background: var(--sf-light);
+  border: 1.5px solid rgba(255, 183, 3, 0.35);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--sf-dark);
+  outline: none;
+}
+
+.plant-input:focus {
+  border-color: var(--sf-gold);
+  background: white;
+}
+
+.plant-btn {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.35);
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.plant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(251, 133, 0, 0.5);
+}
+
+/* Sunflower Wish Popup Modal */
+.wish-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.wish-popup-card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px 28px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--sf-gold);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wish-sunflower-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: rotateGently 12s linear infinite;
+}
+
+.wish-popup-card h4 {
+  font-family: var(--font-title);
+  font-size: 24px;
+  color: var(--sf-dark);
+  margin-bottom: 4px;
+}
+
+.wish-author-badge {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--sf-amber);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.wish-quote-text {
+  font-family: var(--font-story);
+  font-size: 24px;
+  color: var(--sf-brown);
+  line-height: 1.4;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* =========================================
+   CUSTOM SUNFLOWER BOOKMARK CREATOR
+   ========================================= */
+.sunflower-bookmark-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.bookmark-tool-card {
+  background: white;
+  border-radius: 28px;
+  padding: 36px 30px;
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+}
+
+.tool-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sf-light);
+  border: 1px solid var(--sf-gold);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-family: var(--font-title);
+  font-size: 15px;
+  color: var(--sf-amber);
+  margin-bottom: 8px;
+}
+
+.tool-header h3 {
+  font-family: var(--font-title);
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--sf-dark);
+  margin-bottom: 6px;
+}
+
+.tool-header p {
+  color: #666;
+  font-size: 15px;
+}
+
+.bookmark-creator-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Controls Column */
+.bookmark-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.control-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--sf-brown);
+  margin-bottom: 8px;
+}
+
+.color-palette-picker {
+  display: flex;
+  gap: 10px;
+}
+
+.color-dot-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.color-dot-btn:hover,
+.color-dot-btn.active {
+  transform: scale(1.18);
+  outline: 2px solid var(--sf-gold);
+}
+
+.quote-select-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quote-pill-btn {
+  background: var(--sf-light);
+  border: 1.5px solid rgba(255, 183, 3, 0.3);
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-align: left;
+  font-family: var(--font-story);
+  font-size: 17px;
+  color: var(--sf-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quote-pill-btn:hover,
+.quote-pill-btn.active {
+  background: white;
+  border-color: var(--sf-gold);
+  box-shadow: 0 4px 12px var(--sf-glow);
+  transform: translateX(4px);
+}
+
+/* Bookmark Live Preview (Physical Styled) */
+.bookmark-preview-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.physical-bookmark {
+  width: 200px;
+  min-height: 420px;
+  border-radius: 16px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 8px 16px 36px rgba(0, 0, 0, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bookmark-hanging-tassel {
+  position: absolute;
+  top: -34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tassel-eyelet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d4af37;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tassel-ribbon {
+  width: 4px;
+  height: 24px;
+  background: #d4af37;
+}
+
+.tassel-flower {
+  font-size: 20px;
+  animation: swaySunflower 2.5s ease-in-out infinite alternate;
+}
+
+.bm-header-flower {
+  font-size: 40px;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.bm-recipient-title {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bm-quote-body {
+  font-family: var(--font-story);
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 18px 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bm-footer-seal {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  border-top: 1px dashed rgba(255, 255, 255, 0.4);
+  padding-top: 10px;
+  width: 100%;
+}
+
+/* =========================================
+   TWO-PAGE BOOK SNEAK PEEK MODAL
+   ========================================= */
+.book-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 15, 10, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.open-book-spread {
+  background: #faf6ea;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+  border: 1px solid #e3d3b6;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  animation: bookUnfold 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Center binding line */
+.open-book-spread::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.03) 40%, rgba(0, 0, 0, 0.03) 60%, rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+}
+
+.modal-close-icon-btn {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: rgba(0, 0, 0, 0.08);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modal-close-icon-btn:hover {
+  background: var(--sf-amber);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Left Page */
+.book-page-left {
+  padding: 40px 32px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.page-category-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--sf-amber);
+  margin-bottom: 8px;
+}
+
+.book-page-left h2 {
+  font-family: var(--font-title);
+  font-size: clamp(26px, 3.5vw, 34px);
+  color: var(--sf-dark);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.book-page-left .modal-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--sf-brown);
+  margin-bottom: 20px;
+}
+
+.modal-cover-badge {
+  border-radius: 14px;
+  padding: 24px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-cover-badge span {
+  font-size: 44px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.modal-quote-block {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--sf-gold);
+  font-family: var(--font-story);
+  font-size: 20px;
+  color: var(--sf-brown);
+  line-height: 1.4;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+/* Right Page */
+.book-page-right {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-section-heading {
+  font-family: var(--font-title);
+  font-size: 18px;
+  color: var(--sf-dark);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-synopsis-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.modal-dedication-box {
+  background: #fff8e1;
+  border: 1px solid var(--sf-gold);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.modal-dedication-box h5 {
+  font-family: var(--font-title);
+  font-size: 16px;
+  color: var(--sf-amber);
+  margin-bottom: 4px;
+}
+
+.modal-dedication-box p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.modal-excerpt-box {
+  background: white;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 13px;
+  font-style: italic;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  border: 1px solid #ebd9bf;
+}
+
+.modal-actions-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-action-btn {
+  background: white;
+  border: 1.5px solid var(--sf-gold);
+  color: var(--sf-dark);
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.modal-action-btn:hover {
+  background: var(--sf-light);
+  transform: translateY(-2px);
+}
+
+.modal-action-btn.primary {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.3);
+}
+
+/* =========================================
+   SUNFLOWER PORTAL CARD (IN BIRTHDAYJOURNEY / GALLERY)
+   ========================================= */
+.sunflower-library-portal-card {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff0c2 50%, #fedf8d 100%);
+  border: 2px solid var(--sf-gold);
+  border-radius: 24px;
+  padding: 26px 22px;
+  margin: 30px auto 10px;
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(251, 133, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: popIn 0.5s ease;
+}
+
+.portal-glow-sunflower {
+  font-size: 48px;
+  display: inline-block;
+  margin-bottom: 10px;
+  animation: rotateGently 12s linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(255, 183, 3, 0.6));
+}
+
+
+
+.sunflower-library-portal-card h3 {
+  font-family: var(--font-title);
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--sf-dark);
+  margin-bottom: 8px;
+}
+
+.sunflower-library-portal-card p {
+  font-size: 15px;
+  color: var(--sf-brown);
+  max-width: 580px;
+  margin: 0 auto 20px;
+  line-height: 1.45;
+}
+
+.sunflower-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white !important;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: clamp(16px, 2.5vw, 19px);
+  padding: 15px 36px;
+  border-radius: 999px;
+  box-shadow: 0 8px 25px rgba(251, 133, 0, 0.45);
+  transition: all 0.25s ease;
+  animation: bouncePill 2s infinite;
+  border: none;
+  cursor: pointer;
+}
+
+.sunflower-portal-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(251, 133, 0, 0.65);
+}
+
+.portal-hint-tab {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8c5d26;
+  margin-top: 10px;
+  display: block;
+}
+
+/* =========================================
+   ANIMATIONS & KEYFRAMES
+   ========================================= */
+@keyframes rotateGently {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes swaySunflower {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bookUnfold {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 820px) {
+  .open-book-spread {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+  }
+
+  .open-book-spread::after {
+    display: none;
+  }
+
+  .book-page-left {
+    border-right: none;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+  }
+
+  .book-page-right {
+    padding: 24px 20px;
+  }
+
+  .bookmark-creator-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .oracle-book-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   LIVE BOOK EDITOR & ADD BOOK STYLES
+   ========================================= */
+.edit-book-btn {
+  background: white;
+  border: 1.5px solid var(--sf-gold);
+  color: var(--sf-dark);
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.edit-book-btn:hover {
+  background: #fff8e1;
+  transform: translateY(-2px);
+  border-color: var(--sf-amber);
+}
+
+.add-book-pill {
+  background: linear-gradient(135deg, #2a9d8f, #264653) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(42, 157, 143, 0.35) !important;
+}
+
+.add-book-pill:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(42, 157, 143, 0.5) !important;
+}
+
+.reset-books-pill {
+  background: #f8f9fa !important;
+  border: 1px dashed #bbb !important;
+  color: #666 !important;
+  font-size: 12px !important;
+}
+
+.reset-books-pill:hover {
+  background: #eee !important;
+  color: #333 !important;
+}
+
+/* Book Editor Modal */
+.book-editor-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 10, 5, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 350;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.book-editor-card {
+  background: white;
+  border-radius: 28px;
+  padding: 32px 28px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 2px solid var(--sf-gold);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.editor-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.editor-badge {
+  font-family: var(--font-title);
+  font-size: 15px;
+  color: var(--sf-amber);
+  background: #fff8e1;
+  padding: 4px 14px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.editor-header h3 {
+  font-family: var(--font-title);
+  font-size: clamp(26px, 3.5vw, 34px);
+  color: var(--sf-dark);
+}
+
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editor-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editor-field label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--sf-brown);
+}
+
+.editor-input,
+.editor-select,
+.editor-textarea {
+  background: #fffdf8;
+  border: 1.5px solid rgba(255, 183, 3, 0.35);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--sf-dark);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.editor-input:focus,
+.editor-select:focus,
+.editor-textarea:focus {
+  border-color: var(--sf-gold);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.2);
+}
+
+.editor-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.editor-cover-presets {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preset-chip-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 3px solid white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.preset-chip-btn:hover,
+.preset-chip-btn.active {
+  transform: scale(1.15);
+  outline: 2px solid var(--sf-gold);
+}
+
+.editor-action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.editor-save-btn {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.35);
+  transition: all 0.2s ease;
+}
+
+.editor-save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(251, 133, 0, 0.5);
+}
+
+.editor-delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.editor-delete-btn:hover {
+  background: #fecaca;
+}
+
+/* Add Book Banner Card */
+.add-book-banner-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 225, 0.96));
+  border: 1.5px dashed var(--sf-gold);
+  border-radius: 20px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap;
+}
+
+.add-book-banner-card .banner-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.add-book-banner-card .banner-icon {
+  font-size: 32px;
+}
+
+.add-book-banner-card h4 {
+  font-family: var(--font-title);
+  font-size: 20px;
+  color: var(--sf-dark);
+  margin-bottom: 2px;
+}
+
+.add-book-banner-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+.add-my-book-btn {
+  background: linear-gradient(135deg, var(--sf-gold), var(--sf-amber));
+  color: white;
+  border: none;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(251, 133, 0, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.add-my-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(251, 133, 0, 0.45);
+}
+
+.delete-custom-book-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-custom-book-btn:hover {
+  background: #dc2626;
+  color: white;
+}
